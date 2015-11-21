@@ -25,14 +25,18 @@ html, body,
 }
 
 /* Header */
+.major-button {
+  background: rgba(24,80,160,0.8);
+}
 .main-header-group {
   background: rgba(24,80,160,0.8);
 }
 .main-header-item:hover {
-  background: rgba(85,85,85,0.5);
+  background: rgba(16,63,131,0.8);
 }
 .main-header-item.selected {
-  background: rgba(108,127,108,0.8);
+  background: rgba(12,48,99,0.8);
+  border-bottom-color: white;
 }
 .main-header-item:nth-child(3),
 .main-header-item:nth-child(4),
@@ -215,7 +219,7 @@ div.home-page {
   background: none;
   width: auto;
   line-height: 1.8em;
-  color: #9fce9f;
+  color: rgba(237,237,215,1);
   font-size: 1.1em;
   font-weight: 300;
   height: auto;
@@ -223,7 +227,7 @@ div.home-page {
   text-decoration: none;
 }
 .home-page .logo a:hover {
-  color: #c9eac9;
+  color: #B0B08A;
 }
 .home-page .group-area {
   display: none;
@@ -425,6 +429,10 @@ div.home-page {
     float: none;
     margin: 1em;
   }
+}
+
+.scribe-footer {
+    padding: 20px 20px 100px 20px;
 }
 
 .scribe-footer, .scribe-footer .scribe-footer-credits {
