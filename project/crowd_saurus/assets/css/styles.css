@@ -1,17 +1,4 @@
 /* Fonts */
-@font-face {
-  font-family: 'Kievit';
-  src: url('/fonts/KievitWeb-Book.eot'); /* IE9 Compat Modes */
-  src: url('/fonts/KievitWeb-Book.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/fonts/KievitWeb-Book.woff') format('woff'); /* Pretty Modern Browsers */
-}
-@font-face {
-  font-family: 'Kievit';
-  src: url('/fonts/KievitWeb-Medi.eot'); /* IE9 Compat Modes */
-  src: url('/fonts/KievitWeb-Medi.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/fonts/KievitWeb-Medi.woff') format('woff'); /* Pretty Modern Browsers */
-  font-weight: bold;
-}
 html, body,
 .home-page h1, .home-page p, .home-page li,
 .light-box-area #visibility-button {
@@ -39,7 +26,7 @@ html, body,
 
 /* Header */
 .main-header-group {
-  background: rgba(22,23,11,0.8);
+  background: rgba(24,80,160,0.8);
 }
 .main-header-item:hover {
   background: rgba(85,85,85,0.5);
@@ -440,11 +427,17 @@ div.home-page {
   }
 }
 
+.scribe-footer, .scribe-footer .scribe-footer-credits {
+    background-color: rgba(237,237,215,1);
+    color: #111;
+}
+
 .scribe-footer .scribe-footer-general {
   padding-bottom: 10px;
 }
 .emigrants-footer-links {
-  background: #111;
+    background-color: rgba(237,237,215,1);
+    color: #111;
   padding: 0px 0 30px;
   text-align: center;
   margin: 0 -20px;
