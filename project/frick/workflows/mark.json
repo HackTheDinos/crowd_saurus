@@ -1,0 +1,42 @@
+{
+  "name":"mark",
+  "label":"Mark Workflow",
+  "subject_fetch_limit":"10",
+  "generates_subjects": true,
+  "generates_subjects_for": "transcribe",
+
+  "first_task":"mark_primary",
+
+  "tasks": {
+    "mark_primary": {
+      "tool": "pickOneMarkOne",
+      "instruction": "",
+      "generates_subjects": true,
+      "help": {
+        "file": "mark_primary"
+      },
+      "tool_config" : {
+        "displays_transcribe_button": false,
+        "options": [
+          {"type": "rectangleTool", "label": "Box Number", "color": "orange", "generates_subject_type": "cs_box_number", "help": {"file": "m_box_number"}},
+          {"type": "rectangleTool", "label": "Shipping point", "color": "blue", "generates_subject_type": "cs_shipping_point", "help": {"file": "m_shipping_point"}},
+          {"type": "rectangleTool", "label": "Collector (first name)", "color": "darkorange", "generates_subject_type": "cs_collector_given_name", "help": {"file": "m_collector_given_name"}},
+          {"type": "rectangleTool", "label": "Collector (last name)", "color": "magenta", "generates_subject_type": "cs_collector_family_name", "help": {"file": "m_collector_family_name"}},
+          {"type": "rectangleTool", "label": "Date rec.", "color": "teal", "generates_subject_type": "cs_date_recorded", "help": {"file": "m_date_recorded"}},
+          {"type": "rectangleTool", "label": "Date", "color": "sienna", "generates_subject_type": "cs_date", "help": {"file": "m_date"}},
+          {"type": "rectangleTool", "label": "Season at", "color": "purple", "generates_subject_type": "cs_season_at", "help": {"file": "m_season_at"}},
+          {"type": "rectangleTool", "label": "Field No.", "color": "indigo", "generates_subject_type": "cs_", "help": {"file": "m_"}},
+          {"type": "rectangleTool", "label": "AMNH catalog number", "color": "red", "generates_subject_type": "cs_amnh_catalog_number", "help": {"file": "m_amnh_catalog_number"}},
+          {"type": "rectangleTool", "label": "Specimen", "color": "green", "generates_subject_type": "cs_description", "help": {"file": "m_description"}},
+         ] 
+      },
+      "next_task": null
+    },
+
+    "completion_assessment_task": {
+      "tool_config": {
+        "displays_transcribe_button": false
+      }
+    }
+  }
+}
