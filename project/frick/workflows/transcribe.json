@@ -34,18 +34,18 @@
     "f_collector": {
       "tool": "compositeTool",
       "tool_config": {
-          "f_collector_given": {
-            "tool": "textTool",
-            "examples": ["Chas.", "M.F."],
-            "tool_config": {},
-            "label": "First name or initials"
-          },
-          "f_collector_family": {
-            "tool": "textTool",
-            "examples": ["Falkenbach", "Skimer"],
-            "tool_config": {},
-            "label": "Last name"
-          }
+	  "tools": {
+            "f_collector_given": {
+              "tool": "textTool",
+              "label": "First name or initials",
+              "examples": ["Chas.", "M.F."]
+            },
+            "f_collector_family": {
+              "tool": "textTool",
+              "label": "Last name",
+              "examples": ["Falkenbach", "Skimer"]
+            }
+         }
       },
       "help": {
         "file": "t_record_collector"
@@ -89,24 +89,26 @@
     "f_specimen_record": {
       "tool": "compositeTool",
       "tool_config": {
-          "f_specimen_record_field_number": {
-            "tool": "textTool",
-            "examples": ["83", "19035"],
-            "tool_config": {},
-            "label": "Field number"
-          },
-          "f_specimen_record_amnh_catalog_number": {
-            "tool": "textTool",
-            "examples": ["FAM 6111", "FAM 42328"],
-            "tool_config": {},
-            "label": "AMNH catalog number"
-          },
-          "f_specimen_record_amnh_specimen": {
-            "tool": "textTool",
-            "examples": ["Oreodont (large) partial skull & jaws",
-			 "Carnivore right Tomanctus"],
-            "tool_config": {},
-            "label": "Specimen"
+	  "tools": {
+            "f_specimen_record_field_number": {
+              "tool": "textTool",
+              "examples": ["83", "19035"],
+              "tool_config": {},
+              "label": "Field number"
+            },
+            "f_specimen_record_amnh_catalog_number": {
+              "tool": "textTool",
+              "examples": ["FAM 6111", "FAM 42328"],
+              "tool_config": {},
+              "label": "AMNH catalog number"
+            },
+            "f_specimen_record_amnh_specimen": {
+              "tool": "textTool",
+              "examples": ["Oreodont (large) partial skull & jaws",
+	  		 "Carnivore right Tomanctus"],
+              "tool_config": {},
+              "label": "Specimen"
+            }
           }
       },
       "help": {
