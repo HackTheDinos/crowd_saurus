@@ -1,181 +1,119 @@
 {
   "name": "transcribe",
   "label": "Transcribe Workflow",
-  "retire_limit": 3,
+  "retire_limit": 1,
   "generates_subjects": true,
   "generates_subjects_for": "verify",
-  "generates_subjects_after": 3,
+  "generates_subjects_after": 1,
   "generates_subjects_max": 10,
   "generates_subjects_method": "collect-unique",
 
   "tasks": {
-
-
-    "em_record_date": {
+    "f_box_number": {
       "tool": "textTool",
       "tool_config": {},
-      "instruction": "Enter the record date",
-      "examples": ["1867 May 11", "1867 July 30", "1875 December 31"],
+      "instruction": "Enter the box number",
+      "examples": ["5", "349 p.1"],
+      "help": {
+        "file": "t_record_box_number"
+      },
+      "generates_subject_type": "f_transcribed_box_number"
+    }
+
+    "f_shipping_point": {
+      "tool": "textTool",
+      "tool_config": {},
+      "instruction": "Enter the shipping point",
+      "examples": ["Helena, Montana", "Gering Nehr"],
+      "help": {
+        "file": "t_record_shipping_point"
+      },
+      "generates_subject_type": "f_transcribed_shipping_point"
+    }
+
+    "f_collector": {
+      "tool": "compositeTool",
+      "tool_config": {
+          "f_collector_given": {
+            "tool": "textTool",
+            "examples": ["Chas.", "M.F."],
+            "tool_config": {},
+            "label": "First name or initials"
+          },
+          "f_collector_family": {
+            "tool": "textTool",
+            "examples": ["Falkenbach", "Skimer"],
+            "tool_config": {},
+            "label": "Last name"
+          }
+      },
+      "help": {
+        "file": "t_record_collector"
+      },
+      "generates_subject_type": "f_transcribed_collector"
+    },
+      
+    "f_date_recorded": {
+      "tool": "textTool",
+      "tool_config": {},
+      "instruction": "Enter the date recorded",
+      "examples": ["Aug. 25, 1936"],
+      "help": {
+        "file": "t_record_date_recorded"
+      },
+      "generates_subject_type": "f_transcribed_date_recorded"
+    }
+
+    "f_date": {
+      "tool": "textTool",
+      "tool_config": {},
+      "instruction": "Enter the date packed",
+      "examples": ["Aug. 21, 1936", "Sept. 15, 1941"],
       "help": {
         "file": "t_record_date"
       },
-      "generates_subject_type": "em_transcribed_date"
-    },
+      "generates_subject_type": "f_transcribed_date"
+    }
 
-    "em_record_number": {
-      "tool": "numberTool",
+    "f_season_at": {
+      "tool": "textTool",
       "tool_config": {},
-      "instruction": "Enter the record number",
-      "examples": ["287", "289"],
+      "instruction": "Enter the season location",
+      "examples": ["Montana", "Sioux Co. Area."]],
       "help": {
-        "file": "t_record_number"
+        "file": "t_record_date"
       },
-      "generates_subject_type": "em_transcribed_record_number"
-    },
+      "generates_subject_type": "f_transcribed_season_at"
+    }
 
-    "em_record_mortgager": {
-      "tool": "textTool",
-      "instruction": "Enter the mortgager's name",
-      "examples": ["John O'Meallia", "Trustees of St. Patrick's Cathedral"],
-      "generates_subject_type": "em_transcribed_mortgager",
-      "help": {
-        "file": "t_record_mortgager"
-      }
-    },
-
-    "em_record_street_address": {
-      "tool": "textTool",
-      "tool_config": {},
-      "instruction": "Enter the street address",
-      "examples": ["39 Mott St", "S. W. corner of 7th Avenue & 25th St. No 226 7th Avenue", "Mulberry, Mott and Prince St"],
-      "generates_subject_type": "em_transcribed_address",
-      "help": {
-        "file": "t_record_street_address"
-      }
-    },
-
-    "em_record_amount_loaned": {
-      "tool": "numberTool",
-      "tool_config": {},
-      "instruction": "Enter the Amount Loaned",
-      "examples": ["$4,500", "$50,000 and $30,000"],
-      "generates_subject_type": "em_transcribed_amount_loaned",
-      "help": {
-        "file": "t_record_amount_loaned"
-      }
-    },
-
-    "em_record_valuation": {
-      "tool": "textTool",
-      "tool_config": {},
-      "instruction": "Enter the date of the valuation (if one is given). In the next screen, you'll enter the valuation's dollar amounts.",
-      "examples": ["1879 November"],
-      "help": {
-        "file": "t_record_valuation"
-      },
-      "generates_subject_type": "em_transcribed_valuation_date",
-      "next_task": "em_record_valuation_ground_building"
-    },
-
-    "em_record_valuation_ground_building": {
+    "f_specimen_record": {
       "tool": "compositeTool",
       "tool_config": {
-        "tools": {
-          "em_valuation_ground": {
+          "f_specimen_record_field_number": {
             "tool": "textTool",
-            "examples": ["$200,000"],
+            "examples": ["83", "19035"],
             "tool_config": {},
-            "label": "Land Value"
+            "label": "Field number"
           },
-          "em_valuation_building": {
+          "f_specimen_record_amnh_catalog_number": {
             "tool": "textTool",
-            "examples": ["$200,000"],
+            "examples": ["FAM 6111", "FAM 42328"],
             "tool_config": {},
-            "label": "Building Value"
+            "label": "AMNH catalog number"
           }
-        }
-      },
-
-      "help": {
-        "file": "t_record_valuation"
-      },
-      "generates_subject_type": "em_transcribed_valuation_itemized",
-      "instruction": "Sometimes valuations include itemized dollar values for \"ground\" and \"building\". Enter these amounts if you can find them. In the next screen, you'll enter the total valuation.",
-      "next_task": "em_record_valuation_total"
-    },
-
-    "em_record_valuation_total": {
-      "tool": "textTool",
-      "tool_config": {},
-      "instruction": "Enter the valuation ***total*** (if one is given)",
-      "examples": ["$200,000"],
-      "help": {
-        "file": "t_record_valuation"
-      },
-      "generates_subject_type": "em_transcribed_valuation_total",
-      "next_task": null
-    },
-
-    "em_record_survey": {
-      "tool": "compositeTool",
-      "tool_config": {
-        "tools": {
-          "em_survey_land_dimensions": {
+          "f_specimen_record_amnh_specimen": {
             "tool": "textTool",
-            "examples": ["100 x 100"],
-            "label": "Land Dimensions"
-          },
-          "em_survey_building_dimensions": {
-            "tool": "textTool",
-            "examples": ["68 x 100"],
-            "label": "Building Dimensions"
+            "examples": ["Oreodont (large) partial skull & jaws",
+			 "Carnivore right Tomanctus"],
+            "tool_config": {},
+            "label": "Specimen"
           }
-        }
       },
-
       "help": {
-        "file": "t_survey"
+        "file": "t_record_specimen_record"
       },
-      "generates_subject_type": "em_transcribed_survey",
-      "instruction": "Enter, as they appear, any land and building dimensions that were recorded. In the next screen, you'll enter the descriptive information.",
-      "next_task": "em_record_survey_stories_materials"
-    },
-
-    "em_record_survey_stories_materials": {
-      "tool": "compositeTool",
-      "tool_config": {
-        "tools": {
-          "em_record_stories": {
-            "tool": "numberTool",
-            "label": "Enter the Number of Stories",
-            "examples": ["2", "5"]
-          },
-          "em_record_material": {
-            "tool": "textTool",
-            "label": "Enter the building material",
-            "examples": ["Br", "Brick & stone", "Frame Edifice with Slate roof and brick basement."]
-          }
-        }
-      },
-
-      "help": {
-        "file": "t_record_survey_stories_materials"
-      },
-      "generates_subject_type": "em_transcribed_stories_materials",
-      "instruction": "Enter, as they appear, the number of stories and the building materials.",
-      "next_task": "em_record_survey_additional_info"
-    },
-
-    "em_record_survey_additional_info": {
-      "tool": "textTool",
-      "tool_config": {},
-      "instruction": "Enter any additional information you find about the building's construction or significance.",
-      "examples": ["Church"],
-      "help": {
-        "file": "t_record_additional_info"
-      },
-      "generates_subject_type": null,
-      "next_task": null
+      "generates_subject_type": "f_transcribed_specimen_record"
     }
   }
+
 }
