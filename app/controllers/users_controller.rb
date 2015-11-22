@@ -15,4 +15,12 @@ class UsersController < ApplicationController
     render json: AuthStateSerializer.new(user: current_or_guest_user, providers: User.auth_providers), status: 200
   end
 
+  def index
+        page        = get_int :page, 1
+    limit       = get_int :limit, 20
+
+    @users = User.page(page).per(limit)
+    render :layout => "test"
+  end
+
 end

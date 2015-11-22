@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=1000" />
+<title><%= current_project && current_project.title ? current_project.title: 'Scribe' %></title>
+
+<% if current_project %>
+<meta property="og:title" content="<%= current_project.title %>"/>
+<meta name="twitter:title" content="<%= current_project.title %>"/>
+<meta name="description" content="<%= current_project.summary %>"/>
+<meta name="author" content="<%= current_project.author %>"/>
+<meta name="keywords" content="<%= current_project.keywords %>"/>
+
+<% end %>
+
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+<%= stylesheet_link_tag "application", media: "all" %>
+<link rel="stylesheet" href="/css/styles.css" media="screen" title="no title" charset="utf-8">
+
+<% if current_project && current_project.favicon  %>
+  <link rel="shortcut icon" href="<%= current_project.favicon %>">
+<% end %>
+
+<script src="https://cdn.polyfill.io/v1/polyfill.min.js?features=default,es6,Promise,fetch&amp;flags=gated"></script>
+
+
+</head>
+<body>
+
+<header>
+<nav class="main-nav main-header-group">
+<a class="main-header-item logo selected" href="#/">
+<img src="/images/logo.png"></a>
+
+<a class="main-header-item" href="#/mark">Mark</a>
+<a class="main-header-item" href="#/transcribe">Transcribe</a>
+<a class="main-header-item" href="#/verify">Verify</a>
+<a class="main-header-item" href="#/intro">Intro</a>
+<a class="main-header-item" href="#/data" data-reactid=".0.1.0.0.2:$data">Data</a><a class="main-header-item" href="#/about" data-reactid=".0.1.0.0.2:$about">About</a><div class="login" data-reactid=".0.1.0.0.6"><span class="login-container" data-reactid=".0.1.0.0.6.0"><img src="https://lh4.googleusercontent.com/-uIye7uZfqbQ/AAAAAAAAAAI/AAAAAAAAABA/kswVxPhae5I/photo.jpg?sz=50" data-reactid=".0.1.0.0.6.0.0"><span class="label" data-reactid=".0.1.0.0.6.0.1"><span data-reactid=".0.1.0.0.6.0.1.0">Hello </span><span data-reactid=".0.1.0.0.6.0.1.1">Rich von Rauchhaupt</span><span data-reactid=".0.1.0.0.6.0.1.2"> </span></span><a class="logout" data-reactid=".0.1.0.0.6.0.2"¡>Logout</a></span></div></nav></header>
+
+
+<div id="content">
+  <%= yield %>
+</div>
+
+</body>
+</html>
+
+
