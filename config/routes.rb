@@ -13,7 +13,7 @@ API::Application.routes.draw do
   get '/workflows/:id',                                       to: 'workflow#show',        defaults: { format: 'json' }
   #rich v messing around
   get '/users',                                               to: "users#index"
-  
+  get '/users/leaderboard',                                               to: "users#leaderboard"
 
   get '/current_user',                                        to: "users#logged_in_user"
   post '/tutorial_complete',                                  to: "users#tutorial_complete"

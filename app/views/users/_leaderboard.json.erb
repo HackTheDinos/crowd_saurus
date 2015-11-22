@@ -1,0 +1,14 @@
+
+
+{
+"users" :
+[
+<% @users.each do |user| %>
+{
+    "first_name": "<%= @user.name %>",
+    "last_name": "<%= @user.email %>"
+},
+<% end %>
+]
+}  
+ 

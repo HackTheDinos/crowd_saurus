@@ -20,7 +20,17 @@ class UsersController < ApplicationController
     limit       = get_int :limit, 20
 
     @users = User.page(page).per(limit)
-    render :layout => "test"
+    #render :layout => "test"
   end
+
+  def leaderboard
+    @users = User.all
+
+   
+     render :json => @users.map { |user| {:id => user.id, :name => user.name, :email => user.email, :classifications => user.classifications.count} }
+    #render json: {:users => @users} 
+    #render :partial => "users/leaderboard.json"
+  end
+  
 
 end
