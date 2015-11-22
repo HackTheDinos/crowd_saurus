@@ -10,7 +10,6 @@
 
   "tasks": {
 
-
     "cs_catalog_number": {
       "tool": "numberTool",
       "tool_config": {},
