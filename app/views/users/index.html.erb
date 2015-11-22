@@ -1,8 +1,24 @@
-<h3>Users</h3>
-<ul class="users">
-  <% @users.each do |user| %>
-    <li>
-      <%= link_to user.name, user %> signed up <%= user.created_at.to_date %>
-    </li>
-  <% end %>
-</ul>
+<h1>All Users</h1>
+
+<%= paginate @users %>
+
+<table class="dashboard-table" id="subjects-table" width="100%">
+  <tr>
+    <th></th>
+    <th>Name</th>
+    <th>Classifications</th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><% if user.avatar %>
+        <img src="<%= user.avatar %>" /></td>
+      <% end %>
+    </td>
+    <td><%= user.name %></td>
+    <td><%= user.classifications.count %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= paginate @users %>

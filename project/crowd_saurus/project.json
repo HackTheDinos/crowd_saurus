@@ -33,8 +33,18 @@
 
     {
       "name": "Richard von Rauchhaput",
-      "role": "shoehorn",
+      "role": "Developer",
       "organization": "Stony Brook University"
+    },
+    {
+      "name": "Steve McCarthy",
+      "role": "Participant",
+      "organization": "Recurse Center"
+    },
+    {
+      "name": "Andy Liang",
+      "role": "Participant",
+      "organization": "Recurse Center"
     }
   ],
   "organizations": [
@@ -56,10 +66,6 @@
     "google_analytics_client_id": "UA-XXXXXXXXX-0"
   },
 
-  "forum": {
-    "type": "discourse",
-    "base_url": ""
-  },
 
   "menus": {
     "main": [

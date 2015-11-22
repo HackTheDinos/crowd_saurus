@@ -6,11 +6,11 @@
   "generates_subjects_after": 2,
   "generates_subjects_for": "transcribe",
 
-  "first_task":"mark_primary",
+  "first_task":"mark_catalog_number",
 
 
   "tasks": {
-    "mark_primary": {
+    "mark_catalog_number": {
       "tool": "pickOneMarkOne",
       "instruction": "",
       "generates_subjects": true,
@@ -20,12 +20,29 @@
       "tool_config" : {
         "displays_transcribe_button": false,
         "options": [
-          {"type": "rectangleTool", "label": "Catalog Number", "color": "red", "generates_subject_type": "cs_catalog_number", "help": {"file": "m_catalog_number"}},
+          {"type": "rectangleTool", "label": "Catalog Number", "color": "red", "generates_subject_type": "cs_catalog_number", "help": {"file": "m_catalog_number"}}
+        ]
+      },
+      "next_task": "mark_verbatim_description"
+    },
+
+    "mark_verbatim_description": {
+      "tool": "pickOneMarkOne",
+      "instruction": "",
+      "generates_subjects": true,
+      "help": {
+        "file": "mark_primary"
+      },
+      "tool_config" : {
+        "displays_transcribe_button": false,
+        "options": [
           {"type": "rectangleTool", "label": "Verbatim Description", "color": "blue", "generates_subject_type": "cs_verbatim_description", "help": {"file": "m_verbatim_description"}}
         ]
       },
       "next_task": null
     },
+
+    
 
     "completion_assessment_task": {
       "tool_config": {
