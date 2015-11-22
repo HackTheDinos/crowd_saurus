@@ -13,6 +13,8 @@
   <div>
     <ul>
       <li>Catalog Number</li>
+      <li>Unlabeled Number in Top Left Corner of Card</li>
+      <li>053 Cat No.</li>
     </ul>
   </div>
 </div>
