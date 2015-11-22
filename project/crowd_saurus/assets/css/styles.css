@@ -26,7 +26,10 @@ html, body,
 
 /* Header */
 .major-button {
-  background: rgba(24,80,160,0.8);
+  background: rgb(24,80,160);
+}
+.major-button:hover {
+  background: rgb(16,63,131);
 }
 .main-header-group {
   background: rgba(24,80,160,0.8);
