@@ -10,7 +10,6 @@
 
   "tasks": {
 
-
     "cs_catalog_number": {
       "tool": "textTool",
       "tool_config": {},
