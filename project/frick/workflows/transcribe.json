@@ -54,7 +54,7 @@
     },
       
     "f_date_recorded": {
-      "tool": "textTool",
+      "tool": "dateTool",
       "tool_config": {},
       "instruction": "Enter the date recorded",
       "examples": ["Aug. 25, 1936"],
@@ -65,7 +65,7 @@
     },
 
     "f_date": {
-      "tool": "textTool",
+      "tool": "dateTool",
       "tool_config": {},
       "instruction": "Enter the date packed",
       "examples": ["Aug. 21, 1936", "Sept. 15, 1941"],
