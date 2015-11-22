@@ -22,7 +22,6 @@ class Client(object):
         workflow_id = workflow['id']
         url = self.host + '/subject_sets?limit=10&workflow_id=%s&random=true' % (workflow_id)
         response = requests.get(url)
-        set_trace()
         data = response.json()
         return [x for x in data['data']]
 
@@ -51,20 +50,13 @@ class Client(object):
                 if ch:
                     yield ch
 
-    def _ca(self, d, key, value):
-        d['classifications[annotation][%s]' % key] = value
-
-    def _timestamp(self, d):
-        started_at = datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
-        d['classifications[metadata][started_at]'] = started_at
-        d['classifications[metadata][finished_at]'] = started_at
-
-    def _address(self, d, subject_set, subject):
-        d['classifications[subject_id]'] = subject
-        d['classifications[subject_set_id]'] = subject_set
-        d['classifications[workflow_id]'] = self.workflow_id
-
     def mark(self, subject_set, subject, color, x, y, width, height):
+        options = self.mark_workflow['tasks']['mark_primary']['tool_config']['options']
+        for i, v in enumerate(options):
+            if v['color'] == color:
+                sub_tool_index = i
+                break
+            
         url = self.host + '/classifications'
         d = {}
         self._ca(d, 'belongsToUser', 'true')
@@ -75,38 +67,43 @@ class Client(object):
         self._ca(d, 'status', 'mark')
 
         self._ca(d, 'color', color)
+        self._ca(d, 'subToolIndex', sub_tool_index)
         self._ca(d, 'x', x)
         self._ca(d, 'y', y)
         self._ca(d, 'width', width)
         self._ca(d, 'height', height)
 
-        self._address(d, subject_set, subject)
+        self._address(d, self.mark_workflow, subject_set, subject)
 
         d['classifications[task_key]']='mark_primary'
         
         self._timestamp(d)
         response = requests.post(url, data=d)
 
-    def transcribe(self, subject_set_id, subject_id, value):
+    def transcribe(self, subject, value):
+
+        subject_set_id = subject['subject_set_id']
+        subject_id = subject['id']
+        type = ':' + subject['child_subjects'][0]['type']
 
         url = self.host + '/classifications'
         d = {}
         self._ca(d, 'value', value)       
-        self._address(d, subject_set_id, subject_id)
+        self._address(d, self.transcribe_workflow, subject_set_id, subject_id)
         self._timestamp(d)
+        d['classifications[task_key]'] = type
 
-        # TODO: this is bad.
-        d['classifications[task_key]'] = ':f_box_number'
+        return requests.post(url, data=d)
 
-        response = requests.post(url, data=d)
+    def _ca(self, d, key, value):
+        d['classifications[annotation][%s]' % key] = value
 
+    def _timestamp(self, d):
+        started_at = datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
+        d['classifications[metadata][started_at]'] = started_at
+        d['classifications[metadata][finished_at]'] = started_at
 
-# Transcribe step
-
-# classifications[annotation][value]:349
-# classifications[subject_id]:5651bbe47568610b9b0a0000
-# classifications[subject_set_id]:
-# classifications[task_key]:f_box_number
-# classifications[metadata][started_at]:2015-11-22T13:11:06.361Z
-# classifications[metadata][finished_at]:2015-11-22T13:11:39.426Z
-# classifications[workflow_id]:5651b7f07568610b94060000
+    def _address(self, d, workflow, subject_set, subject):
+        d['classifications[subject_id]'] = subject
+        d['classifications[subject_set_id]'] = subject_set
+        d['classifications[workflow_id]'] = workflow['id']
