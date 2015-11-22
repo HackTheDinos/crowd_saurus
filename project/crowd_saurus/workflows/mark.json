@@ -3,6 +3,7 @@
   "label":"Mark Workflow",
   "subject_fetch_limit":"10",
   "generates_subjects": true,
+  "generates_subjects_after": 2,
   "generates_subjects_for": "transcribe",
 
   "first_task":"mark_primary",
