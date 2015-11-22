@@ -1,10 +1,10 @@
 {
   "name": "transcribe",
   "label": "Transcribe Workflow",
-  "retire_limit": 1,
+  "retire_limit": 10,
   "generates_subjects": true,
   "generates_subjects_for": "verify",
-  "generates_subjects_after": 1,
+  "generates_subjects_after": 2,
   "generates_subjects_max": 10,
   "generates_subjects_method": "collect-unique",
 
@@ -43,7 +43,7 @@
             "f_collector_family": {
               "tool": "textTool",
               "label": "Last name",
-              "examples": ["Falkenbach", "Skimer"]
+              "examples": ["Falkenbach", "Skinner"]
             }
          }
       },
