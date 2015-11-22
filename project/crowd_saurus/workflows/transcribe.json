@@ -1,12 +1,12 @@
 {
   "name": "transcribe",
   "label": "Transcribe Workflow",
+  "retire_limit": 3,
   "generates_subjects": true,
-  "retire_limit": 1,
   "generates_subjects_for": "verify",
+  "generates_subjects_after": 1,
   "generates_subjects_max": 10,
   "generates_subjects_method": "collect-unique",
-  "generates_subjects_after": 1,
 
   "tasks": {
 

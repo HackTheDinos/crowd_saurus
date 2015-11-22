@@ -1,2 +1,4 @@
 order,file_path,thumbnail,capture_uuid,page_uri,book_uri,source_rotated,width,height,source_x,source_y,source_w,source_h
 1,http://www.crummy.com/hackthedinos/card1.png,http://www.crummy.com/hackthedinos/card1.png,1,http://www.crummy.com/hackthedinos/card1.png,http://www.crummy.com/hackthedinos/card1.png,0,2513,1390,0,0,2513,1390
+2,http://www.crummy.com/hackthedinos/card12345.png,http://www.crummy.com/hackthedinos/card12345.png,2,http://www.crummy.com/hackthedinos/card12345.png,http://www.crummy.com/hackthedinos/card12345.png,0,2513,1390,0,0,2513,1390
+3,http://www.crummy.com/hackthedinos/card23456.png,http://www.crummy.com/hackthedinos/card23456.png,3,http://www.crummy.com/hackthedinos/card23456.png,http://www.crummy.com/hackthedinos/card23456.png,0,2513,1390,0,0,2513,1390
