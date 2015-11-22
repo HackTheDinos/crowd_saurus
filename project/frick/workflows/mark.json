@@ -25,7 +25,7 @@
           {"type": "rectangleTool", "label": "Date rec.", "color": "teal", "generates_subject_type": "f_date_recorded", "help": {"file": "m_date_recorded"}},
           {"type": "rectangleTool", "label": "Date", "color": "sienna", "generates_subject_type": "f_date", "help": {"file": "m_date"}},
           {"type": "rectangleTool", "label": "Season at", "color": "purple", "generates_subject_type": "f_season_at", "help": {"file": "m_season_at"}},
-          {"type": "rectangleTool", "label": "Specimen record", "color": "indigo", "generates_subject_type": "f_specimen_record", "help": {"file": "m_specimen_record"}}
+          {"type": "rectangleTool", "label": "Specimen record", "color": "indigo", "generates_subject_type": "f_specimenrecord", "help": {"file": "m_specimen_record"}}
 	]
       },
       "next_task": null

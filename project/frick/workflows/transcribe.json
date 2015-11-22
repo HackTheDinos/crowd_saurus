@@ -13,7 +13,7 @@
       "tool": "textTool",
       "tool_config": {},
       "instruction": "Enter the box number",
-      "examples": ["5", "349 p.1"],
+      "examples": ["5", "349"],
       "help": {
         "file": "t_record_box_number"
       },
@@ -48,7 +48,7 @@
          }
       },
       "help": {
-        "file": "t_record_collector"
+        "file": "f_collector"
       },
       "generates_subject_type": "f_transcribed_collector"
     },
@@ -86,23 +86,23 @@
       "generates_subject_type": "f_transcribed_season_at"
     },
 
-    "f_specimen_record": {
+    "f_specimenrecord": {
       "tool": "compositeTool",
       "tool_config": {
 	  "tools": {
-            "f_specimen_record_field_number": {
+            "f_specimenrecord_fieldnumber": {
               "tool": "textTool",
               "examples": ["83", "19035"],
               "tool_config": {},
               "label": "Field number"
             },
-            "f_specimen_record_amnh_catalog_number": {
+            "f_specimenrecord_amnh": {
               "tool": "textTool",
               "examples": ["FAM 6111", "FAM 42328"],
               "tool_config": {},
               "label": "AMNH catalog number"
             },
-            "f_specimen_record_amnh_specimen": {
+            "f_specimenrecord_specimen": {
               "tool": "textTool",
               "examples": ["Oreodont (large) partial skull & jaws",
 	  		 "Carnivore right Tomanctus"],
@@ -115,7 +115,7 @@
         "file": "t_record_specimen_record"
       },
       "generates_subject_type": "f_transcribed_specimen_record"
-    }
-  }
+      }
 
+  }
 }
