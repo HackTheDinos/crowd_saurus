@@ -3,16 +3,17 @@
 <div id="accordion-help-modal">
   <h3>Verbatim Description Sample 1</h3>
   <div class="modal-field-guide" >
-    <img src="/images/m_catalog_number_1.png" alt="Catalog Number Sample 1">
+    <img src="/images/m_verbatim_description_1.png" alt="Verbatim Description">
   </div>
   <h3>Verbatim Description Sample 2</h3>
   <div class="modal-field-guide" >
-    <img src="/images/m_catalog_number_2.png" alt="Catalog Number 2">
+    <img src="/images/m_verbatim_description_2.png" alt="Verbatim Description">
   </div>
   <h3>Naming Variants</h3>
   <div>
     <ul>
-      <li>Verbatim Description</li>
+      <li>Description</li>
+      <li>350 Nature of Speciem</li>
     </ul>
   </div>
 </div>

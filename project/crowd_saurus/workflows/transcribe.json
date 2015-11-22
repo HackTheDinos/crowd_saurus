@@ -10,9 +10,8 @@
 
   "tasks": {
 
-
     "cs_catalog_number": {
-      "tool": "numberTool",
+      "tool": "textTool",
       "tool_config": {},
       "instruction": "Enter the Catalog Number, if there are any letters, please don't include them",
       "examples": ["12345", "98765"],
