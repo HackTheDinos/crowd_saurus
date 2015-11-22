@@ -18,7 +18,7 @@
         "file": "t_record_box_number"
       },
       "generates_subject_type": "f_transcribed_box_number"
-    }
+    },
 
     "f_shipping_point": {
       "tool": "textTool",
@@ -29,7 +29,7 @@
         "file": "t_record_shipping_point"
       },
       "generates_subject_type": "f_transcribed_shipping_point"
-    }
+    },
 
     "f_collector": {
       "tool": "compositeTool",
@@ -62,7 +62,7 @@
         "file": "t_record_date_recorded"
       },
       "generates_subject_type": "f_transcribed_date_recorded"
-    }
+    },
 
     "f_date": {
       "tool": "textTool",
@@ -73,18 +73,18 @@
         "file": "t_record_date"
       },
       "generates_subject_type": "f_transcribed_date"
-    }
+    },
 
     "f_season_at": {
       "tool": "textTool",
       "tool_config": {},
       "instruction": "Enter the season location",
-      "examples": ["Montana", "Sioux Co. Area."]],
+      "examples": ["Montana", "Sioux Co. Area."],
       "help": {
         "file": "t_record_date"
       },
       "generates_subject_type": "f_transcribed_season_at"
-    }
+    },
 
     "f_specimen_record": {
       "tool": "compositeTool",
@@ -100,7 +100,7 @@
             "examples": ["FAM 6111", "FAM 42328"],
             "tool_config": {},
             "label": "AMNH catalog number"
-          }
+          },
           "f_specimen_record_amnh_specimen": {
             "tool": "textTool",
             "examples": ["Oreodont (large) partial skull & jaws",
