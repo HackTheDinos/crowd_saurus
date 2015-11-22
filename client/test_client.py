@@ -17,6 +17,8 @@ for sset in client.subject_sets(client.mark_workflow):
 
 for sset in client.subject_sets(client.transcribe_workflow):
     for subject in client.transcribable(sset):
+        if not subject['child_subjects']:
+            continue
         for i in range(1, 3):
             response = client.transcribe(
                 subject, 
