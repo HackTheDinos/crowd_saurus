@@ -27,7 +27,7 @@ class UsersController < ApplicationController
     @users = User.all
 
    
-     render :json => @users.map { |user| {:id => user.id, :name => user.name, :email => user.email, :classifications => user.classifications.count} }
+     render :json => @users.map { |user| {:id => user.id, :name => user.name, :classifications => user.classifications.count} }
     #render json: {:users => @users} 
     #render :partial => "users/leaderboard.json"
   end
