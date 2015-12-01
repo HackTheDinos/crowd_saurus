@@ -1,4 +1,8 @@
-# Scribe 
+# [Card Catalog Transcriber](http://crowdsaurus.herokuapp.com/)
+
+# [Frick Fossil Finder](http://frickfossils.herokuapp.com/)
+
+# Made with Scribe
 
 [Scribe](http://scribeproject.github.io/) is a framework for crowdsourcing the transcription of text-based documents, particularly documents that are not well suited for Optical Character Recognition. It is a collaboration between [Zooniverse](https://www.zooniverse.org/) and [The New York Public Library](http://www.nypl.org/) with generous support from [The National Endowment for the Humanities (NEH)](http://www.neh.gov/).
 
